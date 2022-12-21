@@ -46,7 +46,7 @@ public class UserDetailsService implements org.springframework.security.core.use
                         .collect(Collectors.toSet())
         );
 
-        authUser.setName(user.getName());
+        authUser.setName(user.getNickname());
         authUser.setFromSocial(user.isFromSocial());
 
         return authUser;

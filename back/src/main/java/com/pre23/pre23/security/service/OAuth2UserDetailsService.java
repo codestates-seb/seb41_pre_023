@@ -46,14 +46,16 @@ public class OAuth2UserDetailsService extends DefaultOAuth2UserService {
         });
 
         String email = null;
+        String nickname ="test";
 
         if(clientName.equals("Google")){
             email = oAuth2User.getAttribute("email");
         }
 
         log.info("EMAIL: " + email);
+        log.info("nickname: " + nickname);
 
-        User user = saveSocialMember(email);
+        User user = saveSocialMember(email,nickname);
         AuthUserDTO authUser = new AuthUserDTO(
                 user.getEmail(),
                 user.getPassword(),
@@ -71,7 +73,7 @@ public class OAuth2UserDetailsService extends DefaultOAuth2UserService {
     }
 
 
-    private User saveSocialMember(String email){
+    private User saveSocialMember(String email, String nickname){
 
         //기존에 동일한 이메일로 가입한 회원이 있는 경우에는 그대로 조회만
         Optional<User> result = repository.findByEmail(email, true);
@@ -81,18 +83,18 @@ public class OAuth2UserDetailsService extends DefaultOAuth2UserService {
         }
 
         //없다면 회원 추가 패스워드는 1111 이름은 그냥 이메일 주소로
-        User clubMember = User.builder().email(email)
-                .name(email)
+        User siteUser = User.builder().email(email)
+                .nickname(nickname)
                 .password( passwordEncoder.encode("1111") )
                 .fromSocial(true)
                 .build();
 
-        clubMember.addMemberRole(UserRole.USER);
+        siteUser.addMemberRole(UserRole.USER);
 
 
-        repository.save(clubMember);
+        repository.save(siteUser);
 
-        return clubMember;
+        return siteUser;
     }
 
 }

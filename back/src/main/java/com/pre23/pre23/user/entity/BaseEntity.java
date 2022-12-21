@@ -11,16 +11,16 @@ import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@EntityListeners(value = { AuditingEntityListener.class })
+@EntityListeners(value = {AuditingEntityListener.class})
 @Getter
 abstract class BaseEntity {
 
     @CreatedDate
-    @Column(name = "regdate" , updatable = false)
+    @Column(name = "reg_date", updatable = false)
     private LocalDateTime regDate;
 
     @LastModifiedDate
-    @Column(name ="moddate" )
+    @Column(name = "mod_date")
     private LocalDateTime modDate;
 
 }

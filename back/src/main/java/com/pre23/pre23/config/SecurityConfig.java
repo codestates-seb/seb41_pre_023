@@ -14,6 +14,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -22,7 +24,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @Log4j2
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
-public class SecurityConfig {
+public class SecurityConfig  {
+
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -33,9 +36,14 @@ public class SecurityConfig {
     }
 
 
+
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 
+        //h2 접속 설정
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
         //AuthenticationManager 설정
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
