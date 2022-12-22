@@ -19,6 +19,73 @@ const FooterLogo = styled.div`
   margin: -12px 0 32px 0;
 `;
 
+const FooterNav = styled.nav`
+  display: flex;
+  flex: 2 1 auto;
+  flex-wrap: wrap;
+`;
+
+const FooterTitle = styled.h5`
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: ${(props) => props.theme.footerTitle};
+`;
+
+const FooterLink = styled.a`
+  color: ${(props) => props.theme.footerTitle};
+`;
+
+const FooterLink2 = styled.a`
+  color: ${(props) => props.theme.footerLink};
+  padding: 4px 0;
+  display: inline-block;
+`;
+
+const FooterList = styled.li`
+  margin: 0;
+  list-style: none;
+`;
+
+const FooterLi = styled.li`
+  margin-top: 16px;
+`;
+
+const FooterCopyright = styled.div`
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const FooterSocial = styled.ul`
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const SocialLi = styled.li`
+  margin-left: 12px;
+`;
+
+const FooterCol = styled.div`
+  flex: 1 0 auto;
+  padding: 0 12px 24px 0;
+`;
+
+const ColP = styled.p`
+  margin-top: auto;
+  margin-bottom: 24px;
+  color: ${(props) => props.theme.footerLink};
+`;
+
+const ColLink = styled.a`
+  line-height: inherit;
+  padding: 0;
+  color: ${(props) => props.theme.footerLink};
+  text-decoration: underline;
+`;
+
 export default function Header() {
   return (
     <FooterBox>
@@ -40,330 +107,193 @@ export default function Header() {
             </svg>
           </a>
         </FooterLogo>
-        <nav class="site-footer--nav">
-          <div class="site-footer--col">
-            <h5 class="-title">
-              <a
-                href="https://stackoverflow.com"
-                class="js-gps-track"
-                data-gps-track="footer.click({ location: 3, link: 15})"
-              >
+        <FooterNav>
+          <FooterCol>
+            <FooterTitle>
+              <FooterLink href="https://stackoverflow.com">
                 Stack Overflow
-              </a>
-            </h5>
-            <ul class="-list js-primary-footer-links">
+              </FooterLink>
+            </FooterTitle>
+            <FooterList>
               <li>
-                <a
-                  href="/questions"
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 16})"
-                >
-                  Questions
-                </a>
+                <FooterLink2 href="/questions">Questions</FooterLink2>
               </li>
               <li>
-                <a
-                  href="/help"
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 3 })"
-                >
-                  Help
-                </a>
+                <FooterLink2 href="/help">Help</FooterLink2>
               </li>
-            </ul>
-          </div>
-          <div class="site-footer--col">
-            <h5 class="-title">
-              <a
-                href="https://stackoverflow.co/"
-                class="js-gps-track"
-                data-gps-track="footer.click({ location: 3, link: 19 })"
-              >
-                Products
-              </a>
-            </h5>
-            <ul class="-list">
+            </FooterList>
+          </FooterCol>
+          <FooterCol>
+            <FooterTitle>
+              <FooterLink href="https://stackoverflow.co/">Products</FooterLink>
+            </FooterTitle>
+            <FooterList>
               <li>
-                <a
-                  href="https://stackoverflow.co/teams"
-                  class="js-gps-track -link"
-                  data-ga='["teams traffic","footer - site nav","stackoverflow.com/teams",null,{"dimension4":"teams"}]'
-                  data-gps-track="footer.click({ location: 3, link: 29 })"
-                >
+                <FooterLink2 href="https://stackoverflow.co/teams">
                   Teams
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  href="https://stackoverflow.co/advertising"
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 21 })"
-                >
+                <FooterLink2 href="https://stackoverflow.co/advertising">
                   Advertising
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  href="https://stackoverflow.co/collectives"
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 40 })"
-                >
+                <FooterLink2 href="https://stackoverflow.co/collectives">
                   Collectives
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  href="https://stackoverflow.co/talent"
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 20 })"
-                >
+                <FooterLink2 href="https://stackoverflow.co/talent">
                   Talent
-                </a>
+                </FooterLink2>
               </li>
-            </ul>
-          </div>
-          <div class="site-footer--col">
-            <h5 class="-title">
-              <a
-                class="js-gps-track"
-                data-gps-track="footer.click({ location: 3, link: 1 })"
-                href="https://stackoverflow.co/"
-              >
-                Company
-              </a>
-            </h5>
-            <ul class="-list">
+            </FooterList>
+          </FooterCol>
+          <FooterCol>
+            <FooterTitle>
+              <FooterLink href="https://stackoverflow.co/">Company</FooterLink>
+            </FooterTitle>
+            <FooterList>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 1 })"
-                  href="https://stackoverflow.co/"
-                >
+                <FooterLink2 href="https://stackoverflow.co/">
                   About
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 27 })"
-                  href="https://stackoverflow.co/company/press"
-                >
+                <FooterLink2 href="https://stackoverflow.co/company/press">
                   Press
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 9 })"
-                  href="https://stackoverflow.co/company/work-here"
-                >
+                <FooterLink2 href="https://stackoverflow.co/company/work-here">
                   Work Here
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 7 })"
-                  href="https://stackoverflow.com/legal"
-                >
+                <FooterLink2 href="https://stackoverflow.com/legal">
                   Legal
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 8 })"
-                  href="https://stackoverflow.com/legal/privacy-policy"
-                >
+                <FooterLink2 href="https://stackoverflow.com/legal/privacy-policy">
                   Privacy Policy
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 37 })"
-                  href="https://stackoverflow.com/legal/terms-of-service"
-                >
+                <FooterLink2 href="https://stackoverflow.com/legal/terms-of-service">
                   Terms of Service
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 13 })"
-                  href="https://stackoverflow.co/company/contact"
-                >
+                <FooterLink2 href="https://stackoverflow.co/company/contact">
                   Contact Us
-                </a>
-              </li>
-              <li class="" id="consent-footer-link">
-                <a
-                  class="js-gps-track -link js-cookie-settings"
-                  data-gps-track="footer.click({ location: 3, link: 38 })"
-                  href="#"
-                  data-consent-popup-loader="footer"
-                >
-                  Cookie Settings
-                </a>
+                </FooterLink2>
               </li>
               <li>
-                <a
-                  class="js-gps-track -link"
-                  data-gps-track="footer.click({ location: 3, link: 39 })"
-                  href="https://stackoverflow.com/legal/cookie-policy"
-                >
-                  Cookie Policy
-                </a>
+                <FooterLink2 href="#">Cookie Settings</FooterLink2>
               </li>
-            </ul>
-          </div>
-          <div class="site-footer--col site-footer--categories-nav">
+              <li>
+                <FooterLink2 href="https://stackoverflow.com/legal/cookie-policy">
+                  Cookie Policy
+                </FooterLink2>
+              </li>
+            </FooterList>
+          </FooterCol>
+          <FooterCol>
             <div>
-              <h5 class="-title">
-                <a
-                  href="https://stackexchange.com"
-                  data-gps-track="footer.click({ location: 3, link: 30 })"
-                >
+              <FooterTitle>
+                <FooterLink href="https://stackexchange.com">
                   Stack Exchange Network
-                </a>
-              </h5>
-              <ul class="-list">
+                </FooterLink>
+              </FooterTitle>
+              <FooterList>
                 <li>
-                  <a
-                    href="https://stackexchange.com/sites#technology"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                  <FooterLink2 href="https://stackexchange.com/sites#technology">
                     Technology
-                  </a>
+                  </FooterLink2>
                 </li>
                 <li>
-                  <a
-                    href="https://stackexchange.com/sites#culturerecreation"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                  <FooterLink2 href="https://stackexchange.com/sites#culturerecreation">
                     Culture &amp; recreation
-                  </a>
+                  </FooterLink2>
                 </li>
                 <li>
-                  <a
-                    href="https://stackexchange.com/sites#lifearts"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                  <FooterLink2 href="https://stackexchange.com/sites#lifearts">
                     Life &amp; arts
-                  </a>
+                  </FooterLink2>
                 </li>
                 <li>
-                  <a
-                    href="https://stackexchange.com/sites#science"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                  <FooterLink2 href="https://stackexchange.com/sites#science">
                     Science
-                  </a>
+                  </FooterLink2>
                 </li>
                 <li>
-                  <a
-                    href="https://stackexchange.com/sites#professional"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                  <FooterLink2 href="https://stackexchange.com/sites#professional">
                     Professional
-                  </a>
+                  </FooterLink2>
                 </li>
                 <li>
-                  <a
-                    href="https://stackexchange.com/sites#business"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                  <FooterLink2 href="https://stackexchange.com/sites#business">
                     Business
-                  </a>
+                  </FooterLink2>
                 </li>
 
-                <li class="mt16 md:mt0">
-                  <a
-                    href="https://api.stackexchange.com/"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                <FooterLi>
+                  <FooterLink2 href="https://api.stackexchange.com/">
                     API
-                  </a>
-                </li>
+                  </FooterLink2>
+                </FooterLi>
 
                 <li>
-                  <a
-                    href="https://data.stackexchange.com/"
-                    class="-link js-gps-track"
-                    data-gps-track="footer.click({ location: 3, link: 24 })"
-                  >
+                  <FooterLink2 href="https://data.stackexchange.com/">
                     Data
-                  </a>
+                  </FooterLink2>
                 </li>
-              </ul>
+              </FooterList>
             </div>
-          </div>
-        </nav>
-        <div class="site-footer--copyright fs-fine md:mt24">
-          <ul class="-list -social md:mb8">
+          </FooterCol>
+        </FooterNav>
+        <FooterCopyright>
+          <FooterSocial>
             <li>
-              <a
-                class="js-gps-track -link"
-                data-gps-track="footer.click({ location: 3, link:4 })"
-                href="https://stackoverflow.blog?blb=1"
-              >
+              <FooterLink2 href="https://stackoverflow.blog?blb=1">
                 Blog
-              </a>
+              </FooterLink2>
             </li>
-            <li>
-              <a
-                href="https://www.facebook.com/officialstackoverflow/"
-                class="-link js-gps-track"
-                data-gps-track="footer.click({ location: 3, link: 31 })"
-              >
+            <SocialLi>
+              <FooterLink2 href="https://www.facebook.com/officialstackoverflow/">
                 Facebook
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/stackoverflow"
-                class="-link js-gps-track"
-                data-gps-track="footer.click({ location: 3, link: 32 })"
-              >
+              </FooterLink2>
+            </SocialLi>
+            <SocialLi>
+              <FooterLink2 href="https://twitter.com/stackoverflow">
                 Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://linkedin.com/company/stack-overflow"
-                class="-link js-gps-track"
-                data-gps-track="footer.click({ location: 3, link: 33 })"
-              >
+              </FooterLink2>
+            </SocialLi>
+            <SocialLi>
+              <FooterLink2 href="https://linkedin.com/company/stack-overflow">
                 LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/thestackoverflow"
-                class="-link js-gps-track"
-                data-gps-track="footer.click({ location: 3, link: 36 })"
-              >
+              </FooterLink2>
+            </SocialLi>
+            <SocialLi>
+              <FooterLink2 href="https://www.instagram.com/thestackoverflow">
                 Instagram
-              </a>
-            </li>
-          </ul>
+              </FooterLink2>
+            </SocialLi>
+          </FooterSocial>
 
-          <p class="md:mb0">
+          <ColP>
             Site design / logo © 2022 Stack Exchange Inc; user contributions
             licensed under{" "}
-            <span class="td-underline">
-              <a href="https://stackoverflow.com/help/licensing">CC BY-SA</a>
+            <span>
+              <ColLink href="https://stackoverflow.com/help/licensing">
+                CC BY-SA
+              </ColLink>
             </span>
-            . <span id="svnrev">rev&nbsp;2022.12.21.43127</span>
-          </p>
-        </div>
+            . <span>rev&nbsp;2022.12.21.43126</span>
+          </ColP>
+        </FooterCopyright>
       </Wrap>
     </FooterBox>
   );
