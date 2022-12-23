@@ -17,7 +17,7 @@ const HeaderBar = styled.header`
 const HeaderBarContainer = styled.div`
   width: 100%;
   display: flex;
-  max-width: 100%;
+  max-width: 1264px;
   height: 100%;
   align-items: center;
   margin: 0 auto;
