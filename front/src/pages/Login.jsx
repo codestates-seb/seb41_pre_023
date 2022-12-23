@@ -10,7 +10,7 @@ const LoginBox = styled.div`
   align-items: center;
   width: 100%;
   background-color: #f1f2f4;
-  min-height: calc(100vh - 50px);
+  min-height: 100vh;
 `;
 
 const MainPageLogo = styled.div`
