@@ -6,6 +6,7 @@ import QuestionDetail from "./pages/QuestionDetail";
 import QuestionsList from "./pages/QuestionsList";
 import Signup from "./pages/Signup";
 import QuestionAsk from "./pages/QuestionAsk";
+import Header from "./components/Header";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Header />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

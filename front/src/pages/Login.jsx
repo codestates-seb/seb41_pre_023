@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import Header from "../components/Header";
 
 const LoginBox = styled.div`
   display: flex;
@@ -176,7 +175,6 @@ export default function Login() {
   };
   return (
     <>
-      <Header />
       <LoginBox>
         <MainPageLogo>
           <svg aria-hidden="true" width="32" height="37" viewBox="0 0 32 37">
