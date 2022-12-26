@@ -32,6 +32,7 @@ public class ApiLoginFilter extends AbstractAuthenticationProcessingFilter {
         log.info("-----------------ApiLoginFilter---------------------");
         log.info("attemptAuthentication");
 
+        //이부분 파라미터가 아닌 post로 받아오도록 변경해야함
         String email = request.getParameter("email");
         String pw = "1111"; //request.getParameter("pw");
 

@@ -59,6 +59,8 @@ public class SecurityConfig  {
         http.logout();
         http.oauth2Login().successHandler(successHandler());
 
+
+        //토큰 유효기간 일주일
         http.rememberMe().tokenValiditySeconds(60*60*24*7).userDetailsService(userDetailsService);
         http.addFilterBefore(apiCheckFilter(), UsernamePasswordAuthenticationFilter.class);
 
