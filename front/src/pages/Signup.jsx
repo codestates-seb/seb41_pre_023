@@ -7,19 +7,26 @@ const SignupContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   background-color: #f1f2f4;
   box-sizing: border-box;
+  min-height: 100vh;
 `;
 
 const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 411px;
-  margin: 0px 48px 128px 0px;
+  display: none; //flex
+  margin-right: 48px;
+  /* flex-direction: column; */
+  /* width: 411px; */
+  /* margin: 0px 48px 128px 0px; */
+  @media (min-width: 817px) {
+    display: block;
+  }
 `;
 
 const Headline = styled.div`
+  display: flex;
+  flex-direction: column;
   line-height: 1;
   font-size: 27px;
   margin-bottom: 32px;
@@ -48,6 +55,18 @@ const InfoLink = styled.a`
 const RightSignup = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MobileHeadline = styled.div`
+  margin-bottom: 24px;
+  font-size: 19.8px;
+  line-height: 25px;
+  text-align: center;
+  @media (min-width: 817px) {
+    display: none;
+  }
 `;
 
 const SignupBox = styled.div`
@@ -102,11 +121,8 @@ const InputBox = styled.div`
 `;
 
 const InputTitle = styled.label`
-  margin: 2px 0;
   padding: 0 2px;
-  font-size: 17px;
-  font-weight: 600;
-  font-family: inherit;
+  font-weight: bold;
 `;
 
 const TextInput = styled.input`
@@ -162,17 +178,15 @@ const AdBox = styled.div`
 `;
 
 const CheckBox = styled.input`
-  margin: 0 4px 0 0;
+  margin-right: 4px;
   vertical-align: middle;
   border-radius: 3px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-  appearance: none;
-  width: 2em;
+  width: 1em;
   height: 1em;
   border: 1px solid hsl(210, 8%, 75%);
-  cursor: pointer;
   outline: 0;
   background-color: white;
 `;
@@ -335,6 +349,9 @@ export default function Signup() {
         </SecondInfo>
       </InfoContainer>
       <RightSignup>
+        <MobileHeadline>
+          Create your Stack Overflow account. It’s free and only takes a minute.
+        </MobileHeadline>
         <SignupBox>
           <GoogleBtn>
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18">
