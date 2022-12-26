@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 const LogoutBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* padding: 74px 24px 24px 24px; */
   background-color: #f1f2f4;
   min-height: 100vh;
 `;
@@ -135,109 +135,112 @@ const ReminderText = styled.div`
 export default function Logout() {
   const navigate = useNavigate();
   return (
-    <LogoutBox>
-      <LogoutContainer>
-        <h3>
-          Clicking “Log out” will log you out of the following
-          <br />
-          domains on this device:
-        </h3>
-        <LogoutFormBox>
-          <ULBox>
-            <Lists>
-              <ListLogo
-                src="https://cdn.sstatic.net/Sites/askubuntu/img/apple-touch-icon.png"
-                alt="Ask Ubuntu"
-                height="16"
-                width="16"
-              ></ListLogo>
-              <ListLink href="https://askubuntu.com/">askubuntu.com</ListLink>
-            </Lists>
-            <Lists>
-              <ListLogo
-                src="https://cdn.sstatic.net/Sites/mathoverflow/img/apple-touch-icon.png"
-                alt="MathOverflow"
-                height="16"
-                width="16"
-              ></ListLogo>
-              <ListLink href="https://mathoverflow.net/">
-                mathoverflow.net
-              </ListLink>
-            </Lists>
-            <Lists>
-              <ListLogo
-                src="https://cdn.sstatic.net/Sites/serverfault/img/apple-touch-icon.png"
-                alt="Server Fault"
-                height="16"
-                width="16"
-              ></ListLogo>
-              <ListLink href="https://serverfault.com/">
-                serverfault.com
-              </ListLink>
-            </Lists>
-            <Lists>
-              <ListLogo
-                src="https://cdn.sstatic.net/Sites/stackapps/img/apple-touch-icon.png"
-                alt="Stack Apps"
-                height="16"
-                width="16"
-              ></ListLogo>
-              <ListLink href="https://stackapps.com/">stackapps.com</ListLink>
-            </Lists>
-            <Lists>
-              <ListLogo
-                src="https://stackoverflow.design/assets/img/logos/se/se-icon.png"
-                alt="Stack Apps"
-                height="16"
-                width="16"
-              ></ListLogo>
-              <ListLink href="https://stackexchange.com/">
-                stackexchange.com
-              </ListLink>
-            </Lists>
-            <Lists>
-              <ListLogo
-                src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png"
-                alt="Stack Overflow"
-                height="16"
-                width="16"
-              ></ListLogo>
-              <ListLink href="https://stackoverflow.com/">
-                stackoverflow.com
-              </ListLink>
-            </Lists>
-            <Lists>
-              <ListLogo
-                src="https://cdn.sstatic.net/Sites/superuser/img/apple-touch-icon.png"
-                alt="Super User"
-                height="16"
-                width="16"
-              ></ListLogo>
-              <ListLink href="https://superuser.com/">superuser.com</ListLink>
-            </Lists>
-          </ULBox>
-          <CheckingLogoutBox>
-            <CheckBox type="checkbox"></CheckBox>
-            <CheckboxText>Log out on all devices</CheckboxText>
-          </CheckingLogoutBox>
-          <BtnContainer>
-            <Link to="/">
-              <LogoutBtn>Log out</LogoutBtn>
-            </Link>
-            <CancelBtn
-              onClick={() => {
-                navigate(-1);
-              }}
-            >
-              Cancel
-            </CancelBtn>
-          </BtnContainer>
-          <ReminderText>
-            If you’re on a shared computer, remember to log out of your Open ID
-            provider (Facebook, Google, Stack Exchange, etc.) as well.
-          </ReminderText>
-        </LogoutFormBox>
-      </LogoutContainer>
-    </LogoutBox>
+    <>
+      <Header />
+      <LogoutBox>
+        <LogoutContainer>
+          <h3>
+            Clicking “Log out” will log you out of the following
+            <br />
+            domains on this device:
+          </h3>
+          <LogoutFormBox>
+            <ULBox>
+              <Lists>
+                <ListLogo
+                  src="https://cdn.sstatic.net/Sites/askubuntu/img/apple-touch-icon.png"
+                  alt="Ask Ubuntu"
+                  height="16"
+                  width="16"
+                ></ListLogo>
+                <ListLink href="https://askubuntu.com/">askubuntu.com</ListLink>
+              </Lists>
+              <Lists>
+                <ListLogo
+                  src="https://cdn.sstatic.net/Sites/mathoverflow/img/apple-touch-icon.png"
+                  alt="MathOverflow"
+                  height="16"
+                  width="16"
+                ></ListLogo>
+                <ListLink href="https://mathoverflow.net/">
+                  mathoverflow.net
+                </ListLink>
+              </Lists>
+              <Lists>
+                <ListLogo
+                  src="https://cdn.sstatic.net/Sites/serverfault/img/apple-touch-icon.png"
+                  alt="Server Fault"
+                  height="16"
+                  width="16"
+                ></ListLogo>
+                <ListLink href="https://serverfault.com/">
+                  serverfault.com
+                </ListLink>
+              </Lists>
+              <Lists>
+                <ListLogo
+                  src="https://cdn.sstatic.net/Sites/stackapps/img/apple-touch-icon.png"
+                  alt="Stack Apps"
+                  height="16"
+                  width="16"
+                ></ListLogo>
+                <ListLink href="https://stackapps.com/">stackapps.com</ListLink>
+              </Lists>
+              <Lists>
+                <ListLogo
+                  src="https://stackoverflow.design/assets/img/logos/se/se-icon.png"
+                  alt="Stack Apps"
+                  height="16"
+                  width="16"
+                ></ListLogo>
+                <ListLink href="https://stackexchange.com/">
+                  stackexchange.com
+                </ListLink>
+              </Lists>
+              <Lists>
+                <ListLogo
+                  src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png"
+                  alt="Stack Overflow"
+                  height="16"
+                  width="16"
+                ></ListLogo>
+                <ListLink href="https://stackoverflow.com/">
+                  stackoverflow.com
+                </ListLink>
+              </Lists>
+              <Lists>
+                <ListLogo
+                  src="https://cdn.sstatic.net/Sites/superuser/img/apple-touch-icon.png"
+                  alt="Super User"
+                  height="16"
+                  width="16"
+                ></ListLogo>
+                <ListLink href="https://superuser.com/">superuser.com</ListLink>
+              </Lists>
+            </ULBox>
+            <CheckingLogoutBox>
+              <CheckBox type="checkbox"></CheckBox>
+              <CheckboxText>Log out on all devices</CheckboxText>
+            </CheckingLogoutBox>
+            <BtnContainer>
+              <Link to="/">
+                <LogoutBtn>Log out</LogoutBtn>
+              </Link>
+              <CancelBtn
+                onClick={() => {
+                  navigate(-1);
+                }}
+              >
+                Cancel
+              </CancelBtn>
+            </BtnContainer>
+            <ReminderText>
+              If you’re on a shared computer, remember to log out of your Open
+              ID provider (Facebook, Google, Stack Exchange, etc.) as well.
+            </ReminderText>
+          </LogoutFormBox>
+        </LogoutContainer>
+      </LogoutBox>
+    </>
   );
 }
