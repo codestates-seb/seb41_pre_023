@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -49,15 +50,10 @@ public class ApiLoginFilter extends AbstractAuthenticationProcessingFilter {
         }
 
          */
+
         String email = map.get("email");
         String pw = map.get("password");
 
-//        if(email == null){
-//            throw new BadCredentialsException("email cannot be null");
-//        }
-//
-//        return null;
-//
         UsernamePasswordAuthenticationToken authToken =
                 new UsernamePasswordAuthenticationToken(email, pw);
 
@@ -77,10 +73,14 @@ public class ApiLoginFilter extends AbstractAuthenticationProcessingFilter {
         String email = ((AuthUserDTO)authResult.getPrincipal()).getUsername();
 
         String token = null;
+
+        //쿠키로 jwt 넣어주기
         try {
             token = jwtUtil.generateToken(email);
 
-            response.setContentType("text/plain");
+            Cookie jwtCookie = new Cookie("Authorization",token);
+            jwtCookie.setMaxAge(60*60*24*7);
+            response.addCookie(jwtCookie);
             response.getOutputStream().write(token.getBytes());
 
             log.info(token);

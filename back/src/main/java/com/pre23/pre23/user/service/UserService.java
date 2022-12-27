@@ -29,7 +29,6 @@ public class UserService {
         verifyExistsEmail(user.getEmail());
 
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        //user.setRoleSet();
 
         return userRepository.save(user);
     }
@@ -40,15 +39,5 @@ public class UserService {
         if (user.isPresent())
             throw new BusinessLogicException(ExceptionCode.USER_EXISTS);
     }
-
-    /*
-    public User getUserByToken(){
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        PrincipalDetails principalDetails = (PrincipalDetails)principal;
-
-        return principalDetails.getUser();
-    }
-
-     */
 
 }

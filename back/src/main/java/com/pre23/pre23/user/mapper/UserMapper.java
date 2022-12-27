@@ -30,6 +30,7 @@ public interface UserMapper {
         userResponseDto.setEmail(user.getEmail());
         userResponseDto.setNickname(user.getNickname());
         userResponseDto.setFromSocial(user.isFromSocial());
+        userResponseDto.setRegDate(user.getRegDate());
 
         return userResponseDto;
     }

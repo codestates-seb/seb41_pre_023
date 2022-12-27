@@ -30,6 +30,9 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
     }
 
 
+
+
+    //지워야하는데 abstract class 여서 못지우는중
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
@@ -44,6 +47,8 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         log.info("Need Modify Member?" + fromSocial);
 
+
+        //비번 db에서 가져오는걸로 수정 필요
         boolean passwordResult = passwordEncoder.matches("1111", authMember.getPassword());
 
         if (fromSocial && passwordResult) {

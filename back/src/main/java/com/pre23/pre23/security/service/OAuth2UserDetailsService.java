@@ -82,7 +82,7 @@ public class OAuth2UserDetailsService extends DefaultOAuth2UserService {
             return result.get();
         }
 
-        //없다면 회원 추가 패스워드는 1111 이름은 그냥 이메일 주소로
+        //이 부분 수정해야함
         User siteUser = User.builder().email(email)
                 .nickname(nickname)
                 .password( passwordEncoder.encode("1111") )
