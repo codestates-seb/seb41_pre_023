@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import DefaultAvatar from "../assets/default-avatar.svg";
+import { Link } from "react-router-dom";
 
 //아이콘 로그인 수정할것
 
@@ -59,6 +61,7 @@ const HeaderSearch = styled.form`
     margin-top: 1px;
     margin-left: -20px; //옆 공간 채워주기
     display: flex;
+    justify-content: flex-end; //641px이하일때 돋보기 끝으로 붙이기
     align-items: center;
     flex-grow: 1; // 남은 공간 채우기
     box-sizing: border-box; // 벗어나지 않고 안에 넣기
@@ -96,6 +99,19 @@ const HeaderSearchBar = styled.input`
         display: block;
     }
 `;
+
+const MobileSearchButton = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+    opacity: 0.7;
+    cursor: pointer;
+    @media screen and (min-width: 641px) {
+        display: none;
+    }
+`;
+
 const SearchGlass = styled.div`
     /* position: absolute; //돋보기 안에 들어가게해줌
     left: 0.7em;
@@ -135,8 +151,81 @@ const HeaderButton = styled.button`
     color: ${(props) => props.Color};
 `;
 
+const RightsideLogos = styled.li`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0 8px;
+    cursor: pointer;
+    > a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+`;
+
+const ProfileIcon = styled.p`
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    background-image: ${(props) =>
+        props.img ? `url(${props.img})` : `url(${DefaultAvatar})`};
+`;
+
+const LogoutPop = styled.div`
+    cursor: pointer;
+    position: absolute;
+    right: 90px;
+    top: 44px;
+    width: 100vw;
+    background-color: hsl(210, 8%, 95%);
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.05),
+        0 2px 8px hsla(0, 0%, 0%, 0.05);
+    @media screen and (min-width: 641px) {
+        width: 363px;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px;
+        p {
+            font-size: 11px;
+            font-weight: 800;
+            color: #0074cc;
+            &:hover {
+                color: rgb(10, 149, 255);
+            }
+        }
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+`;
+
+const LogoutMenu = styled.div`
+    top: 47px;
+    right: 12px;
+    display: block;
+    background-color: hsl(205, 47%, 97%);
+`;
+
+const MenuRow = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 6px;
+    padding: 8px;
+    font-size: 12px;
+    color: #0074cc;
+`;
+
 export default function Header() {
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
+    const [togglePopUp, setTogglePopUp] = useState(false);
     return (
         <HeaderBar>
             <HeaderBarContainer>
@@ -169,20 +258,29 @@ export default function Header() {
                     )}
                 </MenuNav>
                 <HeaderSearch>
-                    <SearchGlass>
+                    <MobileSearchButton>
                         <svg
+                            className="prevent-searchbar"
+                            aria-hidden="true"
                             width="18"
                             height="18"
                             viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
                         >
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M18 16.5L12.864 11.321L12.5079 11.3206C13.4426 10.1307 14 8.63044 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14C8.6311 14 10.1319 13.4421 11.322 12.5068V12.864L16.5 18L18 16.5ZM12 7C12 9.76142 9.76142 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7Z"
-                                fill="hsl(210,8%,55%)"
-                            />
+                                className="prevent-searchbar"
+                                d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"
+                            ></path>
+                        </svg>
+                    </MobileSearchButton>
+                    <SearchGlass>
+                        <svg
+                            className="prevent-searchbar"
+                            aria-hidden="true"
+                            width="17"
+                            height="17"
+                            viewBox="0 0 18 18"
+                        >
+                            <path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"></path>
                         </svg>
                     </SearchGlass>
                     <HeaderSearchBar
@@ -190,22 +288,91 @@ export default function Header() {
                         placeholder="Search..."
                     ></HeaderSearchBar>
                 </HeaderSearch>
-                <div display="inline-flex">
-                    <HeaderButton
-                        BgColor="hsl(205deg 46% 92%)"
-                        Color="hsl(205deg 47% 42%)"
-                        BoColor="hsl(204, 41%, 63%)"
-                    >
-                        Log in
-                    </HeaderButton>
-                    <HeaderButton
-                        BgColor="hsl(206deg 100% 52%)"
-                        Color="hsl(0deg 0% 100%)"
-                        BoColor="hsl(204, 41%, 63%)"
-                    >
-                        Sign up
-                    </HeaderButton>
-                </div>
+                {isLogin ? (
+                    <>
+                        <RightsideLogos className="disabled">
+                            <ProfileIcon img={""}></ProfileIcon>
+                        </RightsideLogos>
+                        <RightsideLogos className="disabled">
+                            <svg width="18" height="16" viewBox="0 0 20 18">
+                                <path d="M4.63 1h10.56a2 2 0 0 1 1.94 1.35L20 10.79V15a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-4.21l2.78-8.44c.25-.8 1-1.36 1.85-1.35Zm8.28 12 2-2h2.95l-2.44-7.32a1 1 0 0 0-.95-.68H5.35a1 1 0 0 0-.95.68L1.96 11h2.95l2 2h6Z"></path>
+                            </svg>
+                        </RightsideLogos>
+                        <RightsideLogos className="green disabled">
+                            <svg width="17" height="17" viewBox="0 0 18 18">
+                                <path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3ZM3 7c-.5 0-1-.5-1-1V4h1v3Zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1ZM16 6c0 .5-.5 1-1 1V4h1v2Z"></path>
+                            </svg>
+                        </RightsideLogos>
+                        <RightsideLogos className="disabled">
+                            <svg width="16" height="16" viewBox="0 0 18 18">
+                                <path d="M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8Zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23ZM11.77 8c-.59.66-1.78 1.09-2.05 1.97a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.06-1.35.66-2.2 1.83-2.88.39-.29.7-.75.7-1.24.01-1.24-1.64-1.82-2.35-.72-.21.33-.18.73-.18 1.1H5.75c0-1.97 1.03-3.26 3.03-3.26 1.75 0 3.47.87 3.47 2.83 0 .57-.2 1.05-.48 1.44Z"></path>
+                            </svg>
+                        </RightsideLogos>
+                        <RightsideLogos
+                            className="popup-btn prevent-popup"
+                            onClick={() => {
+                                setTogglePopUp(!togglePopUp);
+                            }}
+                        >
+                            <span>
+                                <svg
+                                    aria-hidden="true"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                >
+                                    <path d="M15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2ZM1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2Zm16-7H1v4h16V6Z"></path>
+                                </svg>
+                            </span>
+
+                            {togglePopUp ? (
+                                <LogoutPop>
+                                    <header>
+                                        <p>CURRENT COMMUNITY</p>
+                                        <svg
+                                            onClick={() => {
+                                                setTogglePopUp(!togglePopUp);
+                                            }}
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 18 18"
+                                        >
+                                            <path d="M15 4.41 13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41Z"></path>
+                                        </svg>
+                                    </header>
+                                    <LogoutMenu>
+                                        <MenuRow>
+                                            <div>
+                                                <Link to="/logout">
+                                                    log out
+                                                </Link>
+                                            </div>
+                                        </MenuRow>
+                                    </LogoutMenu>
+                                </LogoutPop>
+                            ) : (
+                                ""
+                            )}
+                        </RightsideLogos>
+                    </>
+                ) : (
+                    <div display="inline-flex">
+                        <HeaderButton
+                            BgColor="hsl(205deg 46% 92%)"
+                            Color="hsl(205deg 47% 42%)"
+                            BoColor="hsl(204, 41%, 63%)"
+                        >
+                            Log in
+                        </HeaderButton>
+                        <HeaderButton
+                            BgColor="hsl(206deg 100% 52%)"
+                            Color="hsl(0deg 0% 100%)"
+                            BoColor="hsl(204, 41%, 63%)"
+                        >
+                            Sign up
+                        </HeaderButton>
+                    </div>
+                )}
             </HeaderBarContainer>
         </HeaderBar>
     );
