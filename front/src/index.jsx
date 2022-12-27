@@ -59,19 +59,24 @@ a {
   text-decoration: none;
 }
 
+.disabled{
+	opacity: 0.3;
+	cursor: not-allowed !important;
+}
+
 `;
 
 const colorTheme = {
-  footerBg: "hsl(210,8%,15%)",
-  footerTitle: "hsl(210,8%,75%)",
-  footerLink: "hsl(210,8%,60%)",
+    footerBg: "hsl(210,8%,15%)",
+    footerTitle: "hsl(210,8%,75%)",
+    footerLink: "hsl(210,8%,60%)",
 };
 
 root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={colorTheme}>
-      <GlobalStyle />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <ThemeProvider theme={colorTheme}>
+            <GlobalStyle />
+            <App />
+        </ThemeProvider>
+    </React.StrictMode>
 );
