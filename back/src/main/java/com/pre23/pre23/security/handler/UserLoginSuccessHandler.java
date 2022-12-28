@@ -47,7 +47,7 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         log.info("Need Modify Member?" + fromSocial);
 
-
+        /*
         //비번 db에서 가져오는걸로 수정 필요
         boolean passwordResult = passwordEncoder.matches("1111", authMember.getPassword());
 
@@ -55,6 +55,8 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
             log.info("asdfsfdasdffa");
             redirectStratgy.sendRedirect(request, response, "/member/modify?from=social");
         }
+
+         */
     }
 
 

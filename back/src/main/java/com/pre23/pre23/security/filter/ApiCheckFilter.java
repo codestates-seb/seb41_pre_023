@@ -1,6 +1,7 @@
 package com.pre23.pre23.security.filter;
 
 import com.pre23.pre23.security.util.JWTUtil;
+import io.jsonwebtoken.lang.Strings;
 import lombok.extern.log4j.Log4j2;
 import net.minidev.json.JSONObject;
 import org.springframework.util.AntPathMatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Optional;
 
 @Log4j2
 public class ApiCheckFilter extends OncePerRequestFilter {
@@ -40,9 +42,11 @@ public class ApiCheckFilter extends OncePerRequestFilter {
             log.info("ApiCheckFilter.................................................");
             log.info("ApiCheckFilter.................................................");
 
-            boolean checkHeader = checkAuthHeader(request);
 
-            if(checkHeader){
+            //이메일 알아오기
+            String checkHeader = checkAuthHeader(request);
+
+            if(!checkHeader.isEmpty()){
                 filterChain.doFilter(request, response);
                 return;
             }else {
@@ -63,9 +67,9 @@ public class ApiCheckFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private boolean checkAuthHeader(HttpServletRequest request) {
+    public String checkAuthHeader(HttpServletRequest request) {
 
-        boolean checkResult = false;
+        String checkResult = "test2@gmail.com";
 
         String authHeader = request.getHeader("Authorization");
 
@@ -75,7 +79,7 @@ public class ApiCheckFilter extends OncePerRequestFilter {
             try {
                 String email = jwtUtil.validateAndExtract(authHeader.substring(7));
                 log.info("validate result: " + email);
-                checkResult =  email.length() > 0;
+                checkResult =  email;
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -83,4 +87,5 @@ public class ApiCheckFilter extends OncePerRequestFilter {
 
         return checkResult;
     }
+
 }
