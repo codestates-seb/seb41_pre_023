@@ -3,6 +3,8 @@ import styled from "styled-components";
 import MDEditor from "@uiw/react-md-editor";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Container = styled.div`
   // 페이지 전체
@@ -651,6 +653,7 @@ export default function QuestionAsk() {
                         {" "}
                         <svg
                           aria-hidden="true"
+                          class="svg-icon iconClearSm"
                           width="14"
                           height="14"
                           viewBox="0 0 14 14"
