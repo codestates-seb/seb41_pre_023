@@ -5,6 +5,9 @@ import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useState } from "react";
+
+document.documentElement.setAttribute("data-color-mode", "light");
 
 const Container = styled.div`
     // 페이지 전체
@@ -505,8 +508,35 @@ const CloseButton = styled.button`
     vertical-align: bottom;
 `;
 export default function QuestionAsk() {
-    const [problemValue, setProblemValue] = React.useState("");
-    const [tryValue, setTryValue] = React.useState("");
+    const navigate = useNavigate();
+
+    const [problemValue, setProblemValue] = useState("");
+    const [tryValue, setTryValue] = useState("");
+    const [titleValue, setTitleValue] = useState("");
+    console.log(titleValue);
+
+    const titleChange = (e) => {
+        setTitleValue(e.target.value);
+    };
+
+    const addQuestion = async () => {
+        try {
+            await axios.post(`http://localhost:8080/questions`, {
+                title: titleValue,
+                contents: problemValue + tryValue,
+            });
+            navigate("/");
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const handleDiscard = () => {
+        setProblemValue("");
+        setTryValue("");
+        setTitleValue("");
+    };
+
     return (
         <>
             <Header />
@@ -588,7 +618,13 @@ export default function QuestionAsk() {
                                                     you're asking a question to
                                                     another person.
                                                     <TitleInputBox>
-                                                        <TitleInput placeholder=" e.g. Is there an R function for finding the index of an element in a vector?"></TitleInput>
+                                                        <TitleInput
+                                                            placeholder=" e.g. Is there an R function for finding the index of an element in a vector?"
+                                                            onChange={
+                                                                titleChange
+                                                            }
+                                                            value={titleValue}
+                                                        ></TitleInput>
                                                     </TitleInputBox>
                                                 </TitleDescription>
                                             </TitleDetail>
@@ -638,8 +674,10 @@ export default function QuestionAsk() {
                             </EditorContainer>
                         </LowContainer>
                         <ButtonContainer>
-                            <ReviewButton>Review your question</ReviewButton>
-                            <DiscardButton data-modal-toggle="popup-modal">
+                            <ReviewButton onClick={addQuestion}>
+                                Post your question
+                            </ReviewButton>
+                            <DiscardButton onClick={handleDiscard}>
                                 Discard draft
                             </DiscardButton>
                             <ModalContainer
