@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const QuestionList = styled.div`
   margin-left: -24px;
@@ -36,6 +37,7 @@ const QuestionContent = styled.div`
 
 const QuestionTitle = styled.h3`
   // a태그 삽입할지 고민할 것
+  cursor: pointer;
   font-size: 17px;
   line-height: 22px;
   margin-top: -1.95px;
@@ -97,7 +99,17 @@ const Questions = ({ questionList }) => {
               <span>votes</span>
             </QuestionSummary>
             <QuestionContent>
-              <QuestionTitle>{question.title}</QuestionTitle>
+              <QuestionTitle>
+                <Link
+                  to={`/${question.user_id}`}
+                  state={{
+                    question: question,
+                  }}
+                >
+                  {" "}
+                  {question.title}
+                </Link>
+              </QuestionTitle>
               <QuestionData>
                 <QuestionCard>{question.nickname}</QuestionCard>
 

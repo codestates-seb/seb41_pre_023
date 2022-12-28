@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = styled.nav`
   width: 164px;
@@ -46,6 +47,7 @@ const ChoiceList = styled.li`
   font-size: 13px;
   display: flex;
   align-items: center; //중앙정렬
+  cursor: pointer;
 `;
 
 const Icon = styled.svg`
@@ -53,13 +55,14 @@ const Icon = styled.svg`
 `;
 
 export default function LeftSidebar() {
+  const navigate = useNavigate();
   return (
     <Sidebar>
       <SidebarContainer>
         <ListContainer>
-          <ChoiceList>Home</ChoiceList>
+          <ChoiceList onClick={() => navigate("/")}>Home</ChoiceList>
           <ListTitle>PUBLIC</ListTitle>
-          <List>
+          <List className="disabled">
             <Icon
               width="18"
               height="18"
@@ -74,7 +77,7 @@ export default function LeftSidebar() {
             </Icon>
             Questions
           </List>
-          <List>
+          <List className="disabled">
             <Icon width="18" height="18" viewBox="0 0 18 18"></Icon>Tags
           </List>
         </ListContainer>
