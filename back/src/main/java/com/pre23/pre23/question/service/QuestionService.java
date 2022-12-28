@@ -19,9 +19,9 @@ public class QuestionService {
         this.questionRepository = questionRepository;
     }
 
-    public Question createQuestion(Question question){
-        //jwt를 이용한 사용자 검증이 들어가야하지 않을까>?????
 
+    //질문 작성
+    public Question createQuestion(Question question){
         return questionRepository.save(question);
     }
 

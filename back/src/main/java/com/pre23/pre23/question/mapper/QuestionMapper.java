@@ -10,6 +10,7 @@ import com.pre23.pre23.user.service.UserService;
 import org.mapstruct.Mapper;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 
 @Mapper(componentModel = "spring")
 public interface QuestionMapper {
@@ -20,7 +21,7 @@ public interface QuestionMapper {
 
         question.setQuestionTitle(questionPostDto.getQuestionTitle());
         question.setQuestionContent(questionPostDto.getQuestionContent());
-
+        question.setCreationDate(LocalDateTime.now());
         question.setUser(userService.getLoginedUser(request));
         return question;
     }

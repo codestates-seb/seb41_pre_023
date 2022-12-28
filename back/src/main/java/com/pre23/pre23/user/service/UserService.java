@@ -36,9 +36,6 @@ public class UserService {
 
 
         //프론트 요청과 함께 온 jwt 가져오기
-
-
-        //지금 여기 email을 못 가져와서 문제발생
         String email = apiCheckFilter.checkAuthHeader(request);
         log.info("사용자의 email :"+email);
         //db에서 유저 검색하기

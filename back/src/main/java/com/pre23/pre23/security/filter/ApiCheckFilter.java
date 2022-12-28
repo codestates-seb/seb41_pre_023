@@ -69,10 +69,10 @@ public class ApiCheckFilter extends OncePerRequestFilter {
 
     public String checkAuthHeader(HttpServletRequest request) {
 
-        String checkResult = "test2@gmail.com";
+        String checkResult = "";
 
         String authHeader = request.getHeader("Authorization");
-
+        log.info("authHeader : "+authHeader);
         if(StringUtils.hasText(authHeader) && authHeader.startsWith("Bearer ")){
             log.info("Authorization exist: " + authHeader);
 
@@ -81,6 +81,8 @@ public class ApiCheckFilter extends OncePerRequestFilter {
                 log.info("validate result: " + email);
                 checkResult =  email;
             } catch (Exception e) {
+
+                log.info("이메일 못 가져옴!!!!");
                 e.printStackTrace();
             }
         }
