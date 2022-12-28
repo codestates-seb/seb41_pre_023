@@ -1,0 +1,16 @@
+{
+  "login": [
+    {
+      "email": "bean@gmail.com",
+      "password": "merong123!",
+      "id": 1
+    }
+  ],
+  "signup": [
+    {
+      "email": "babo@gmail.com",
+      "password": "dkasjdasl123",
+      "id": 1
+    }
+  ]
+}

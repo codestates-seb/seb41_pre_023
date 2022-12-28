@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DefaultAvatar from "../assets/default-avatar.svg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 //아이콘 로그인 수정할것
 
@@ -135,6 +137,7 @@ const Logo = styled.svg`
     padding: 0px 8px;
     margin-left: 0;
     margin-top: -4px;
+    cursor: pointer;
 `;
 
 const HeaderButton = styled.button`
@@ -224,12 +227,17 @@ const MenuRow = styled.div`
 `;
 
 export default function Header() {
-    const [isLogin, setIsLogin] = useState(true);
+    const navigate = useNavigate();
+
+    //현재 상태값 조회 = useSelector()
+    const isLogin = useSelector((state) => state.isLogin);
+    console.log(isLogin);
     const [togglePopUp, setTogglePopUp] = useState(false);
     return (
         <HeaderBar>
             <HeaderBarContainer>
                 <Logo
+                    onClick={() => navigate("/")}
                     width="166"
                     height="30"
                     viewBox="0 0 146 30"
@@ -358,13 +366,16 @@ export default function Header() {
                 ) : (
                     <div display="inline-flex">
                         <HeaderButton
+                            onClick={() => navigate("/login")}
                             BgColor="hsl(205deg 46% 92%)"
                             Color="hsl(205deg 47% 42%)"
                             BoColor="hsl(204, 41%, 63%)"
                         >
                             Log in
                         </HeaderButton>
+
                         <HeaderButton
+                            onClick={() => navigate("/signup")}
                             BgColor="hsl(206deg 100% 52%)"
                             Color="hsl(0deg 0% 100%)"
                             BoColor="hsl(204, 41%, 63%)"

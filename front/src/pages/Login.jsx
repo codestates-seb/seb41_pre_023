@@ -1,6 +1,11 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Header from "../components/Header";
+import { login } from "../store/reducer";
 
 const LoginBox = styled.div`
     display: flex;
@@ -141,6 +146,10 @@ const ErrorText = styled.p`
 `;
 
 export default function Login() {
+    //생성된 액션함수 가져오기=>useDispatch()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -170,11 +179,17 @@ export default function Login() {
         },
     });
 
-    const onSubmit = (data) => {
-        // console.log(data);
+    //위의 유효성 검사에 통과하여 data를 받아오면 실행
+    const onSubmit = async (data) => {
+        console.log(data);
+        await axios.post(`http://localhost:8080/login`, data);
+        dispatch(login());
+        navigate("/");
     };
+
     return (
         <>
+            <Header />
             <LoginBox>
                 <MainPageLogo>
                     <svg

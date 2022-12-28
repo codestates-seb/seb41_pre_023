@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import store from "./store/reducer";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -73,10 +75,12 @@ const colorTheme = {
 };
 
 root.render(
-    <React.StrictMode>
-        <ThemeProvider theme={colorTheme}>
-            <GlobalStyle />
-            <App />
-        </ThemeProvider>
-    </React.StrictMode>
+    <Provider store={store}>
+        <React.StrictMode>
+            <ThemeProvider theme={colorTheme}>
+                <GlobalStyle />
+                <App />
+            </ThemeProvider>
+        </React.StrictMode>
+    </Provider>
 );
