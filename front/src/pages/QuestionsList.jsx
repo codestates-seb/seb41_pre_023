@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+
 import LeftSidebar from "../components/LeftSidebar";
 import Questions from "./Questions";
 import styled from "styled-components";
@@ -11,12 +11,17 @@ const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   display: flex;
+  height: auto;
+  max-height: 3000px;
+  min-height: 1000px;
+  max-width: 1100px;
 `;
 
 const QuestionsAll = styled.div`
   //AQ, RS
-
-  max-width: 1100px;
+  height: auto;
+  max-height: 3000px;
+  min-height: 1000px;
   border-left: 1px;
   border: 1px solid hsl(210deg 8% 85%);
   background: white;
@@ -76,7 +81,7 @@ export default function QuestionsList() {
       user_id: 1,
       nickname: "nick",
       creation_date: "2022-12-23",
-      title: "맵맵",
+      title: "Cryptico js store rsa key in file and get RSAKey from file",
       contents: "ㅇㅇ",
       vote: 4,
     },
@@ -84,7 +89,7 @@ export default function QuestionsList() {
       user_id: 2,
       nickname: "nack",
       creation_date: "2021-12-25",
-      title: "안녕",
+      title: "ModuleNotFoundError: No module named 'menu'",
       contents: "ㅇㅇ",
       vote: 4,
     },
@@ -92,7 +97,6 @@ export default function QuestionsList() {
 
   return (
     <>
-      <Header />
       <Container>
         <LeftSidebar />
         <QuestionsAll>
