@@ -3,6 +3,8 @@ import styled from "styled-components";
 import MDEditor from "@uiw/react-md-editor";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Container = styled.div`
     // 페이지 전체
@@ -378,9 +380,6 @@ const ButtonContainer = styled.div`
 const ReviewButton = styled.button`
     // 리뷰 버튼
     margin: 16px;
-    --_bu-bs: none !important;
-    opacity: 0.5;
-    pointer-events: none;
     text-decoration: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -388,7 +387,6 @@ const ReviewButton = styled.button`
     background-color: hsl(206, 100%, 52%);
     border: 1px solid transparent;
     border-radius: 3px;
-    box-shadow: none !important;
     color: hsl(0, 0%, 100%);
     font-size: 13px;
     padding: 0.8em;
@@ -400,7 +398,6 @@ const ReviewButton = styled.button`
     position: relative;
     outline: none;
     text-align: center;
-    user-select: none;
 `;
 const DiscardButton = styled.button`
     // 제거 버튼
@@ -509,8 +506,17 @@ const CloseButton = styled.button`
     vertical-align: bottom;
 `;
 export default function QuestionAsk() {
+    const navigate = useNavigate();
+
     const [problemValue, setProblemValue] = React.useState("");
     const [tryValue, setTryValue] = React.useState("");
+
+    const onSubmit = async (data) => {
+        console.log(data);
+        await axios.post(`http://localhost:8080/questions`, data);
+        navigate("/");
+    };
+
     return (
         <>
             <Header />
@@ -609,8 +615,7 @@ export default function QuestionAsk() {
                                         <EditorTitleDescription>
                                             {" "}
                                             Introduce the problem and expand on
-                                            what you put in the title. Minimum
-                                            20 characters.
+                                            what you put in the title.
                                         </EditorTitleDescription>
                                     </EditorTitleLabel>
                                 </EditorTitleContainer>
@@ -631,8 +636,7 @@ export default function QuestionAsk() {
                                             {" "}
                                             Describe what you tried. what you
                                             expected to happen, and what
-                                            actually resuited. Mininum 20
-                                            characters.
+                                            actually resuited.
                                         </EditorTitleDescription>
                                     </EditorTitleLabel>
                                 </EditorTitleContainer>
@@ -644,7 +648,9 @@ export default function QuestionAsk() {
                             </EditorContainer>
                         </LowContainer>
                         <ButtonContainer>
-                            <ReviewButton>Review your question</ReviewButton>
+                            <ReviewButton onClick={onSubmit}>
+                                Post your question
+                            </ReviewButton>
                             <DiscardButton data-modal-toggle="popup-modal">
                                 Discard draft
                             </DiscardButton>

@@ -22,5 +22,13 @@
       "password": "dkasjdasl123",
       "id": 1
     }
+  ],
+  "questions": [
+    {
+      "title": "babo",
+      "content": "bblablah",
+      "etc": "merong123",
+      "id": 1
+    }
   ]
 }
