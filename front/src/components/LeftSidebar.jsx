@@ -5,7 +5,8 @@ const Sidebar = styled.nav`
   width: 164px;
   position: relative;
   font-size: 100%;
-  height: 10000px; //보류
+  height: auto;
+  max-height: 3000px;
   z-index: 1000;
 `;
 
