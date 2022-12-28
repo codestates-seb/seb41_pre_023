@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
 import LeftSidebar from "../components/LeftSidebar";
 import Questions from "./Questions";
@@ -77,6 +78,8 @@ const MainTopButton = styled.button`
 // 글 추천수	vote number
 
 export default function QuestionsList() {
+    const navigate = useNavigate();
+
     const questionsList = [
         {
             user_id: 1,
@@ -106,6 +109,7 @@ export default function QuestionsList() {
                         <MainTopBar>
                             <Title>Top Question</Title>
                             <MainTopButton
+                                onClick={() => navigate("/register")}
                                 BgColor="hsl(206deg 100% 52%)"
                                 Color="hsl(0deg 0% 100%)"
                                 BoColor="hsl(204, 41%, 63%)"
