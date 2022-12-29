@@ -139,6 +139,7 @@ export default function Logout() {
 
     const handleLogout = () => {
         dispatch(logout());
+        localStorage.clear();
         navigate("/");
     };
     return (

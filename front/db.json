@@ -4,6 +4,11 @@
       "email": "bean@gmail.com",
       "password": "merong123!",
       "id": 1
+    },
+    {
+      "email": "bean@gmail.com",
+      "password": "merong123!",
+      "id": 2
     }
   ],
   "signup": [

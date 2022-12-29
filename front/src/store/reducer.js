@@ -1,8 +1,11 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
+const initialToken = localStorage.getItem("accessToken");
+
 //초기값은 비로그인 상태
 const initialState = {
-    isLogin: false,
+    isLogin: !!initialToken, //뒤에 나오는 값이 참인지 거짓인지 판별해주는 연산자 !!
+    accessToken: initialToken,
 };
 
 //action + reducer 생성

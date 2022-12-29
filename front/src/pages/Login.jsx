@@ -181,10 +181,19 @@ export default function Login() {
 
     //위의 유효성 검사에 통과하여 data를 받아오면 실행
     const onSubmit = async (data) => {
-        console.log(data);
-        await axios.post(`http://localhost:8080/login`, data);
-        dispatch(login());
-        navigate("/");
+        try {
+            await axios
+                .post(`http://pre-23.herokuapp.com/users/login`, data)
+                .then((data) => {
+                    console.log(data);
+                    dispatch(login());
+                    localStorage.clear();
+                    localStorage.setItem("accessToken", data.data);
+                    navigate("/");
+                });
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     return (
