@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import useScrollTop from "../util/useScrollTop";
 
 import LeftSidebar from "../components/LeftSidebar";
 import Questions from "./Questions";
@@ -79,6 +80,7 @@ const MainTopButton = styled.button`
 
 export default function QuestionsList() {
     const navigate = useNavigate();
+    useScrollTop();
 
     const questionsList = [
         {
@@ -107,7 +109,7 @@ export default function QuestionsList() {
                 <QuestionsAll>
                     <QuestionMain>
                         <MainTopBar>
-                            <Title>Top Question</Title>
+                            <Title>Top Questions</Title>
                             <MainTopButton
                                 onClick={() => navigate("/register")}
                                 BgColor="hsl(206deg 100% 52%)"
