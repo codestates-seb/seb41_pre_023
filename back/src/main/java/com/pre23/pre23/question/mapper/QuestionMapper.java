@@ -11,6 +11,7 @@ import org.mapstruct.Mapper;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface QuestionMapper {
@@ -39,6 +40,8 @@ public interface QuestionMapper {
         questionResponseDto.setUser(userMapper.userToUserResponseDto(user));//질문 작성자 속성 추가
         return questionResponseDto;
     }
+
+    List<QuestionResponseDto> questionsToQuestionResponseDto(List <Question> questions);
 
 
 }

@@ -5,6 +5,8 @@ import com.pre23.pre23.exception.ExceptionCode;
 import com.pre23.pre23.question.entity.Question;
 import com.pre23.pre23.question.repository.QuestionRepository;
 import com.pre23.pre23.user.entity.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -48,5 +50,12 @@ public class QuestionService {
     }
 
     //글 수정 삭제 -> 추후에...
+
+
+
+    //질문 글들 여러개 불러오기
+    public Page<Question> findQuestions(int page, int size){
+        return questionRepository.findAll(PageRequest.of(page,size));
+    }
 
 }

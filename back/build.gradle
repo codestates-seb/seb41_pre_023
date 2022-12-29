@@ -32,7 +32,7 @@ dependencies {
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 	implementation 'com.google.code.gson:gson:2.8.7'
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
-
+	runtimeOnly 'mysql:mysql-connector-java'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
