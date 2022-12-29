@@ -21,7 +21,7 @@ public class Question {
     @Id
     @GeneratedValue
     @Column(name = "question_id")
-    private Long questionId;
+    private long questionId;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "member_id")

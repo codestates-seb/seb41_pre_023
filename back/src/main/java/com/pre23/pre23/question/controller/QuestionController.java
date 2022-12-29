@@ -62,7 +62,17 @@ public class QuestionController<response> {
     }
 
 
-    //특정 답변 가져오기 API
+    //특정 질문 가져오기 API
+    @GetMapping("/{question-id}")
+    public ResponseEntity getQuestion(@PathVariable("question-id") @Positive long questionId){
+        Question question = questionService.findQuestion(questionId);
+        log.info("컨트롤러 : "+question.getQuestionTitle());
+
+
+        return new ResponseEntity<>(
+                new SingleResponseDto<>(questionMapper.questionToQuestionResponseDto(userMapper,question)),
+                HttpStatus.OK);
+    }
 
 
 

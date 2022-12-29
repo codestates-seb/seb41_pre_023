@@ -93,7 +93,7 @@ public class SecurityConfig  {
     @Bean
     public ApiCheckFilter apiCheckFilter() {
 
-        return new ApiCheckFilter("/post", jwtUtil());
+        return new ApiCheckFilter("/question", jwtUtil());
     }
 
 }
