@@ -88,6 +88,12 @@ function ElapsedTime(date) {
 
 //const 문법?
 const Questions = ({ questionList }) => {
+    for (let quest of questionList) {
+        quest.question.creationDate = new Date(quest.question.creationDate);
+    }
+    questionList.sort(
+        (a, b) => b.question.creationDate - a.question.creationDate
+    );
     console.log(questionList);
 
     return (
