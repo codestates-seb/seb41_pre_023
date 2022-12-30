@@ -30,7 +30,7 @@ const QuestionsAll = styled.div`
     border-left: 1px;
     border: 1px solid hsl(210deg 8% 85%);
     background: white;
-    padding: 74px 24px 24px 24px;
+    padding: 74px 0px 24px 24px;
     width: calc(100% - 164px);
 `;
 
@@ -38,7 +38,7 @@ const QuestionMain = styled.div`
     //질문 보여줄 곳
 
     float: left;
-    width: calc(100% - 320px); // 메인 길이조절
+    width: 100%; // 메인 길이조절
     background-color: white;
 `;
 
@@ -55,7 +55,7 @@ const Title = styled.h1`
 
 const MainTopButton = styled.button`
     background-color: ${(props) => props.BgColor};
-    margin: 0 0 0 12px;
+    margin: 0 24px 0 12px;
     padding: 8px 10px;
     border: 1px solid transparent;
     height: 39px;

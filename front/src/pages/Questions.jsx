@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 const QuestionList = styled.div`
     margin-left: -24px;
     margin-bottom: 30px;
-    background: lightgreen;
     border-top: 1px solid hsl(210deg 8% 85%);
 `;
 const Question = styled.div`
-    background: hsl(47deg 87% 94%);
     height: 120px;
     display: flex;
     flex-direction: column;
@@ -16,6 +14,9 @@ const Question = styled.div`
     border-bottom: 1px solid hsl(210deg 8% 90%);
     padding: 16px;
     text-align: left;
+    :nth-child(2n) {
+        background-color: hsl(47deg 87% 94%);
+    }
 `;
 const QuestionSummary = styled.div`
     display: inline-flex;
@@ -62,15 +63,15 @@ const QuestionCard = styled.div`
 
 //시간계산 알고리즘
 function ElapsedTime(date) {
-    const start = new Date(date);
-    const end = new Date();
+    const start = new Date(date).getTime();
+    const end = new Date().getTime();
 
     const diff = (end - start) / 1000;
 
     const times = [
         { name: "year", milliSeconds: 60 * 60 * 24 * 365 },
         { name: "months", milliSeconds: 60 * 60 * 24 * 30 },
-        { name: "mins", milliSeconds: 60 * 60 * 24 },
+        { name: "days", milliSeconds: 60 * 60 * 24 },
         { name: "hours", milliSeconds: 60 * 60 },
         { name: "mins", milliSeconds: 60 },
     ];
