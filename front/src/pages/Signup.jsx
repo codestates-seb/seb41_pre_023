@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { login } from "../store/reducer";
-import Header from "../components/Header";
 
 const SignupContainer = styled.div`
     padding-top: 74px; //header 50px + container 24px
@@ -271,7 +268,6 @@ const ErrorText = styled.p`
 
 export default function Signup() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     const {
         register,
@@ -280,9 +276,19 @@ export default function Signup() {
     } = useForm();
 
     const onSubmit = async (data) => {
-        await axios.post(`http://localhost:8080/signup`, data);
-        dispatch(login());
-        navigate("/");
+        try {
+            await axios
+                .post(`http://pre-23.herokuapp.com/users/register`, {
+                    ...data,
+                    fromSocial: false,
+                })
+                .then((data) => {
+                    navigate("/login");
+                    console.log(data);
+                });
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     console.log(errors);
@@ -290,7 +296,6 @@ export default function Signup() {
 
     return (
         <>
-            <Header />
             <SignupContainer>
                 <InfoContainer>
                     <Headline>Join the Stack Overflow community</Headline>
@@ -425,8 +430,18 @@ export default function Signup() {
                     </SignupBox>
                     <SignupFormBox onSubmit={handleSubmit(onSubmit)}>
                         <InputBox>
-                            <InputTitle>Display name</InputTitle>
-                            <TextInput htmlFor="nickname" />
+                            <InputTitle htmlFor="nickname">
+                                Display name
+                            </InputTitle>
+                            <TextInput
+                                type="text"
+                                error={
+                                    errors.nickname?.message === undefined
+                                        ? ""
+                                        : "error"
+                                }
+                                {...register("nickname", {})}
+                            />
                         </InputBox>
                         <InputBox>
                             <InputTitle htmlFor="email">Email</InputTitle>

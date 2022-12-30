@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import MDEditor from "@uiw/react-md-editor";
 import Footer from "../components/Footer.jsx";
-import Header from "../components/Header.jsx";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
@@ -218,6 +217,8 @@ const DiscardButton = styled.button`
 `;
 
 export default function QuestionAsk() {
+    const initialToken = localStorage.getItem("accessToken");
+
     //card 창
     // const [titleCardOpen, setTitleCardOpen] = useState({
     //     visibility: "visible",
@@ -254,11 +255,23 @@ export default function QuestionAsk() {
         try {
             if (titleValue !== "" && problemValue !== "" && tryValue !== "") {
                 //빈칸 방지
-                await axios.post(`http://localhost:8080/questions`, {
-                    title: titleValue,
-                    contents: problemValue + tryValue,
-                });
-                navigate("/");
+                await axios
+                    .post(
+                        "http://pre-23.herokuapp.com/question",
+                        {
+                            questionTitle: titleValue,
+                            questionContent: problemValue + tryValue,
+                        },
+                        {
+                            headers: {
+                                "Content-Type": "application/json",
+                                Authorization: `Bearer ${initialToken}`,
+                            },
+                        }
+                    )
+                    .then(() => {
+                        navigate("/");
+                    });
             }
         } catch (error) {
             console.error(error);
@@ -267,7 +280,6 @@ export default function QuestionAsk() {
 
     return (
         <>
-            <Header />
             <Content>
                 <LayoutContainer>
                     <HeaderRow>
@@ -386,7 +398,7 @@ export default function QuestionAsk() {
                         </DiscardButton>
                     </ButtonContainer>
                 </LayoutContainer>
-                <Footer></Footer>
+                <Footer />
             </Content>
         </>
     );

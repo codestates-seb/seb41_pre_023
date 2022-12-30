@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 import useScrollTop from "../util/useScrollTop";
+import { useState } from "react";
 
 import LeftSidebar from "../components/LeftSidebar";
 import Questions from "./Questions";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 const Container = styled.div`
     //메인 전체창 AQ,LS,RS
@@ -70,48 +72,47 @@ const MainTopButton = styled.button`
     word-break: break-all; //글씨 안넘치게함
 `;
 
-// 질문 글 고유값	question_id
-// 유저 id	user_id integer????
-// 닉네임	nickname
-// 글 생성일자	creation_date	 // 지난시간 계산?
-// 글 제목	title
-// 글 내용	contents
-// 글 추천수	vote number
-
 export default function QuestionsList() {
+    const isLogin = useSelector((state) => state.isLogin);
     const navigate = useNavigate();
     useScrollTop();
 
-    const questionsList = [
-        {
-            user_id: 1,
-            nickname: "nick",
-            creation_date: "2022-12-23",
-            title: "Cryptico js store rsa key in file and get RSAKey from file",
-            contents: "ㅇㅇ",
-            vote: 4,
-        },
-        {
-            user_id: 2,
-            nickname: "nack",
-            creation_date: "2021-12-25",
-            title: "ModuleNotFoundError: No module named 'menu'",
-            contents: "ㅇㅇ",
-            vote: 4,
-        },
-    ]; //객체만들고 넣어보고 상세값 조절하기
+    const [questionsList, setQuestionsList] = useState([]);
+
+    const handleList = async () => {
+        try {
+            await axios
+                .get("http://pre-23.herokuapp.com/question?page=1&size=100")
+                .then((res) => {
+                    setQuestionsList(res.data.data);
+                });
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        handleList();
+    }, []);
+
+    const handleRegisterClick = useCallback(() => {
+        if (isLogin) {
+            navigate("/register");
+        } else {
+            navigate("/login");
+        }
+    }, [isLogin, navigate]);
 
     return (
         <>
-            <Header />
             <Container>
                 <LeftSidebar />
                 <QuestionsAll>
                     <QuestionMain>
                         <MainTopBar>
-                            <Title>Top Questions</Title>
+                            <Title>All Questions</Title>
                             <MainTopButton
-                                onClick={() => navigate("/register")}
+                                onClick={handleRegisterClick}
                                 BgColor="hsl(206deg 100% 52%)"
                                 Color="hsl(0deg 0% 100%)"
                                 BoColor="hsl(204, 41%, 63%)"

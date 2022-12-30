@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Header from "../components/Header";
 import { login } from "../store/reducer";
 
 const LoginBox = styled.div`
@@ -198,7 +197,6 @@ export default function Login() {
 
     return (
         <>
-            <Header />
             <LoginBox>
                 <MainPageLogo>
                     <svg

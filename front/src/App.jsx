@@ -6,40 +6,48 @@ import QuestionDetail from "./pages/QuestionDetail";
 import QuestionsList from "./pages/QuestionsList";
 import Signup from "./pages/Signup";
 import QuestionAsk from "./pages/QuestionAsk";
-// import Header from "./components/Header";
+import Header from "./components/Header";
+
+const withLayout = (Component) => {
+    return (
+        <>
+            <Header />
+            <Component />
+        </>
+    );
+};
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <QuestionsList />,
+        element: withLayout(QuestionsList),
         errorElement: <NotFound />,
     },
     {
         path: "/:questionId", //useParams()를 쓸때 ":"이용
-        element: <QuestionDetail />,
+        element: withLayout(QuestionDetail),
     },
     {
         path: "/login",
-        element: <Login />,
+        element: withLayout(Login),
     },
     {
         path: "/logout",
-        element: <Logout />,
+        element: withLayout(Logout),
     },
     {
         path: "/signup",
-        element: <Signup />,
+        element: withLayout(Signup),
     },
     {
         path: "/register",
-        element: <QuestionAsk />,
+        element: withLayout(QuestionAsk),
     },
 ]);
 
 function App() {
     return (
         <>
-            {/* <Header /> */}
             <RouterProvider router={router} />
         </>
     );
