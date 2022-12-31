@@ -243,7 +243,6 @@ export default function QuestionAsk() {
     const [problemValue, setProblemValue] = useState("");
     const [tryValue, setTryValue] = useState("");
     const [titleValue, setTitleValue] = useState("");
-    console.log(titleValue);
 
     //제목글 작성 관리
     const titleChange = (e) => {
@@ -403,4 +402,3 @@ export default function QuestionAsk() {
         </>
     );
 }
-// 내꺼

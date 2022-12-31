@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const QuestionList = styled.div`
     margin-left: -24px;
@@ -63,27 +64,10 @@ const QuestionCard = styled.div`
 
 //시간계산 알고리즘
 function ElapsedTime(date) {
-    const start = new Date(date).getTime();
-    const end = new Date().getTime();
+    const start = moment(date).add(9, "h"); //작성일자 => 들어오는 값이 9시간 전이 들어옴..
+    const end = moment(); //현재시간
 
-    const diff = (end - start) / 1000;
-
-    const times = [
-        { name: "year", milliSeconds: 60 * 60 * 24 * 365 },
-        { name: "months", milliSeconds: 60 * 60 * 24 * 30 },
-        { name: "days", milliSeconds: 60 * 60 * 24 },
-        { name: "hours", milliSeconds: 60 * 60 },
-        { name: "mins", milliSeconds: 60 },
-    ];
-
-    for (const value of times) {
-        const betweenTime = Math.floor(diff / value.milliSeconds);
-
-        if (betweenTime > 0) {
-            return `${betweenTime} ${value.name} ago`;
-        }
-    }
-    return "Now";
+    return end.to(start);
 }
 
 //const 문법?
@@ -94,7 +78,7 @@ const Questions = ({ questionList }) => {
     questionList.sort(
         (a, b) => b.question.creationDate - a.question.creationDate
     );
-    console.log(questionList);
+    // console.log(questionList);
 
     return (
         <>
@@ -122,11 +106,7 @@ const Questions = ({ questionList }) => {
                                     {question.user.nickname}
                                 </QuestionCard>
 
-                                <time
-                                    dateTime={
-                                        new Date(question.question.creationDate)
-                                    }
-                                >
+                                <time>
                                     {ElapsedTime(
                                         question.question.creationDate
                                     )}
