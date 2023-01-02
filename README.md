@@ -2,7 +2,7 @@
 
 ---
 
-
+![](https://velog.velcdn.com/images/davina96/post/a37ea209-a356-4e0a-8bbb-1edab3f17c6b/image.svg)
 
 # 🖥 프로젝트 소개
 
