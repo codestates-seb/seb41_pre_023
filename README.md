@@ -144,7 +144,10 @@ discord
 
 ### 📌 QuestionAsk
 
-![업로드중..](blob:https://velog.io/2dec1d9a-f75e-4131-aa9e-102a2a7af93d)
+![](https://velog.velcdn.com/images/davina96/post/8415fb8d-7fb1-4513-a043-bd3ec3bcc398/image.png)
+
+![](https://velog.velcdn.com/images/davina96/post/6a27acf7-da00-43b2-bbfd-05b2c5aeb737/image.png)
+
 
 ### 📌 QuestionDetail
 
