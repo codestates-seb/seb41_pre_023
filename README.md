@@ -37,39 +37,43 @@ stack overflow 를 분석 및 구현
 
 ---
 
+<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=기술스택아이콘&logoColor=white">
 [https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white](https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white)
 
+<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=기술스택아이콘&logoColor=white">
 [https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
 
 ### Frontend
 
 ---
 
-html
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-javascript
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-react
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
-styled-components
-<img src="https://img.shields.io/badge/styled-components-DB7093?style=for-the-badge&logo=기술스택아이콘&logoColor=white">
-Redux toolkit
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 
-axios
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+
+<img src="https://img.shields.io/badge/styled-components-#DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+
+<img src="https://img.shields.io/badge/Redux toolkit-#764ABC?style=for-the-badge&logo=Redux toolkit&logoColor=white">
+
+<img src="https://img.shields.io/badge/axios-#5A29E4?style=for-the-badge&logo=axios&logoColor=white">
+
 
 ### 공통 스택
 
 ---
 
-git
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
-github
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
-notion
+<img src="https://img.shields.io/badge/notion-notion?style=for-the-badge&logo=notion&logoColor=white">
 
-google meet
+<img src="https://img.shields.io/badge/google meet-#00897B?style=for-the-badge&logo=google meet&logoColor=white">
 
-discord
+<img src="https://img.shields.io/badge/discord-#5865F2?style=for-the-badge&logo=discord&logoColor=white">
+
 
 ### 라이브러리 version
 
@@ -111,7 +115,7 @@ discord
 
 ---
 
-![](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled.png)
+![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled.png)
 
 
 # 🛠 프로젝트 데모
