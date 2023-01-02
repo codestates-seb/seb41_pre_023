@@ -37,11 +37,10 @@ stack overflow 를 분석 및 구현
 
 ---
 
-<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=기술스택아이콘&logoColor=white">
-[https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white](https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white)
-
-<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=기술스택아이콘&logoColor=white">
-[https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+<img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=Heroku&logoColor=white">
 
 ### Frontend
 
