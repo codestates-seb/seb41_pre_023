@@ -96,7 +96,7 @@ stack overflow 를 분석 및 구현
 
 ---
 
-![pre-project 23조 (User Flow).png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/aa5395da-2890-4b2b-819e-cbb26659a273/pre-project_23%EC%A1%B0_(User_Flow).png)
+![image](https://user-images.githubusercontent.com/78696537/210204356-e63f1643-d004-444e-b0f0-5356fe5baffb.png)
 
 
 # 🛠 프로젝트 데모
