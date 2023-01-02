@@ -4,11 +4,13 @@
 
 ![](https://velog.velcdn.com/images/davina96/post/a37ea209-a356-4e0a-8bbb-1edab3f17c6b/image.svg)
 
+
 # 🖥 프로젝트 소개
 
 ---
 
 stack overflow 를 분석 및 구현
+
 
 # 😀 팀원 구성
 
@@ -21,6 +23,7 @@ stack overflow 를 분석 및 구현
 | 안다빈 | Front-end |
 | 이현수 | Back-end (부팀장) |
 | 동대겸 | Back-end |
+
 
 # **🔗** 배포 링크
 
@@ -79,11 +82,13 @@ discord
 - react-redux : ^8.0.5
 - react-router-dom : ^6.6.0
 
+
 # ⏰ 프로젝트 기간
 
 ---
 
 ### **2022.12.19 ~ 2022.01.02 (2주)**
+
 
 # 📈 프로젝트 목표
 
@@ -101,11 +106,13 @@ discord
     - REST API
     - AWS 배포
 
+
 # 📊 User Flow
 
 ---
 
 ![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled.png)
+
 
 # 🛠 프로젝트 데모
 
@@ -119,29 +126,31 @@ discord
 
 ### 📌 Login
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%203.png)
+![](https://velog.velcdn.com/images/davina96/post/c2f31c2e-7c4e-408a-9f09-47e6a7b65f75/image.png)
+
 
 ### 📌 Logout
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%204.png)
+![](https://velog.velcdn.com/images/davina96/post/f94b5261-a679-4342-9e64-e68a7bdb99ee/image.png)
 
 ### 📌 NotFound
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%205.png)
+![](https://velog.velcdn.com/images/davina96/post/8753cecf-92c1-45d1-bbba-f88970bb2a33/image.png)
 
 ### 📌 Signup
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%206.png)
+![](https://velog.velcdn.com/images/davina96/post/34e15f8a-2a04-4be5-b114-c92275b70d2b/image.png)
 
 ### 📌 QuestionAsk
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%207.png)
+![업로드중..](blob:https://velog.io/2dec1d9a-f75e-4131-aa9e-102a2a7af93d)
 
 ### 📌 QuestionDetail
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%208.png)
+![](https://velog.velcdn.com/images/davina96/post/ecc721f0-d915-40c2-94b7-3f0d3ee9a8b2/image.png)
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%209.png)
+![](https://velog.velcdn.com/images/davina96/post/e71d5a1a-63de-4430-96af-7efecad8be15/image.png)
+
 
 # **✏️ Commit Convention**
 
