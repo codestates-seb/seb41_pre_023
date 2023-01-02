@@ -1,20 +1,27 @@
 package com.pre23.pre23.security.filter;
 
 
+import com.google.gson.Gson;
 import com.pre23.pre23.security.dto.AuthUserDTO;
 import com.pre23.pre23.security.util.JWTUtil;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
+import java.util.Scanner;
 
 @Log4j2
 public class ApiLoginFilter extends AbstractAuthenticationProcessingFilter {
@@ -32,15 +39,21 @@ public class ApiLoginFilter extends AbstractAuthenticationProcessingFilter {
         log.info("-----------------ApiLoginFilter---------------------");
         log.info("attemptAuthentication");
 
-        String email = request.getParameter("email");
-        String pw = "1111"; //request.getParameter("pw");
+        //post
+        String requestedBody = request.getReader().lines().reduce("",String::concat);
+        Gson gson = new Gson();
+        Map<String, String> map = gson.fromJson(requestedBody,Map.class);
 
-//        if(email == null){
-//            throw new BadCredentialsException("email cannot be null");
-//        }
-//
-//        return null;
-//
+        /*요청 들어온거 로그 찍기
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            log.info(entry.getValue());
+        }
+
+         */
+
+        String email = map.get("email");
+        String pw = map.get("password");
+
         UsernamePasswordAuthenticationToken authToken =
                 new UsernamePasswordAuthenticationToken(email, pw);
 
@@ -60,10 +73,14 @@ public class ApiLoginFilter extends AbstractAuthenticationProcessingFilter {
         String email = ((AuthUserDTO)authResult.getPrincipal()).getUsername();
 
         String token = null;
+
+        //쿠키로 jwt 넣어주기
         try {
             token = jwtUtil.generateToken(email);
 
-            response.setContentType("text/plain");
+            Cookie jwtCookie = new Cookie("Authorization",token);
+            jwtCookie.setMaxAge(60*60*24*7);
+            response.addCookie(jwtCookie);
             response.getOutputStream().write(token.getBytes());
 
             log.info(token);
