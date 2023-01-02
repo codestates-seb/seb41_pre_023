@@ -4,13 +4,11 @@
 
 ![](https://velog.velcdn.com/images/davina96/post/a37ea209-a356-4e0a-8bbb-1edab3f17c6b/image.svg)
 
-
 # 🖥 프로젝트 소개
 
 ---
 
-stack overflow 클론코딩 프로젝트
-
+stack overflow 를 분석 및 구현
 
 # 😀 팀원 구성
 
@@ -107,7 +105,7 @@ discord
 
 ---
 
-![](https://velog.velcdn.com/images/davina96/post/88df7eb8-65fe-494f-993d-366e5409b4c1/image.png)
+![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled.png)
 
 # 🛠 프로젝트 데모
 
@@ -115,9 +113,9 @@ discord
 
 ### 📌 Home
 
-![](https://velog.velcdn.com/images/davina96/post/87f9d0f5-cbda-4ef0-911b-6cbaaf500eab/image.png)
+![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%201.png)
 
-![](https://velog.velcdn.com/images/davina96/post/d53154c7-98c1-48ed-b3ca-d21ec7a426fe/image.png)
+![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%202.png)
 
 ### 📌 Login
 
