@@ -46,15 +46,14 @@ stack overflow 를 분석 및 구현
 ---
 
 html
-<img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
 javascript
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
 react
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
 styled-components
-
+<img src="https://img.shields.io/badge/styled-components-DB7093?style=for-the-badge&logo=기술스택아이콘&logoColor=white">
 Redux toolkit
-![image](https://user-images.githubusercontent.com/111031253/210202463-8815a3ee-3fe7-4b5b-8b94-371525248d03.png)
 
 axios
 
@@ -112,7 +111,7 @@ discord
 
 ---
 
-![](https://velog.velcdn.com/images/davina96/post/6df21431-7196-43a2-b345-71994cef056f/image.png)
+![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled.png)
 
 
 # 🛠 프로젝트 데모
@@ -121,9 +120,9 @@ discord
 
 ### 📌 Home
 
-![](https://velog.velcdn.com/images/davina96/post/8591ad86-3bbc-4e99-abec-89f0cc82ea80/image.png)
+![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%201.png)
 
-![](https://velog.velcdn.com/images/davina96/post/b2712a95-7011-4fd5-a579-207b3e7a2448/image.png)
+![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%202.png)
 
 ### 📌 Login
 
@@ -144,10 +143,7 @@ discord
 
 ### 📌 QuestionAsk
 
-![](https://velog.velcdn.com/images/davina96/post/8415fb8d-7fb1-4513-a043-bd3ec3bcc398/image.png)
-
-![](https://velog.velcdn.com/images/davina96/post/6a27acf7-da00-43b2-bbfd-05b2c5aeb737/image.png)
-
+![업로드중..](blob:https://velog.io/2dec1d9a-f75e-4131-aa9e-102a2a7af93d)
 
 ### 📌 QuestionDetail
 
