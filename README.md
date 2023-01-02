@@ -120,9 +120,9 @@ discord
 
 ### 📌 Home
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%201.png)
+![](https://velog.velcdn.com/images/davina96/post/6a44a326-cd14-478d-9ad2-a378d92952f5/image.png)
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%202.png)
+![](https://velog.velcdn.com/images/davina96/post/748d6c03-68c4-4528-a120-08efd4c0ff6a/image.png)
 
 ### 📌 Login
 
@@ -143,7 +143,7 @@ discord
 
 ### 📌 QuestionAsk
 
-![업로드중..](blob:https://velog.io/2dec1d9a-f75e-4131-aa9e-102a2a7af93d)
+![](https://velog.velcdn.com/images/davina96/post/715ce2c4-32ec-464f-8b14-94f0f2aaf68e/image.png)
 
 ### 📌 QuestionDetail
 
