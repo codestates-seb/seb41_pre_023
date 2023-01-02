@@ -96,7 +96,7 @@ stack overflow 를 분석 및 구현
 
 ---
 
-![](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled.png)
+![pre-project 23조 (User Flow).png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/aa5395da-2890-4b2b-819e-cbb26659a273/pre-project_23%EC%A1%B0_(User_Flow).png)
 
 
 # 🛠 프로젝트 데모
@@ -105,9 +105,9 @@ stack overflow 를 분석 및 구현
 
 ### 📌 Home
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%201.png)
+![image](https://user-images.githubusercontent.com/78696537/210203331-3e802b18-c850-4131-ad05-3c6b19f92e47.png)
 
-![Untitled](Readme%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%20096b10da29ef43348a8fa626d9238e5d/Untitled%202.png)
+![image](https://user-images.githubusercontent.com/78696537/210203287-c008193d-1512-4653-901a-d0dd78f9c0a2.png)
 
 ### 📌 Login
 
@@ -128,7 +128,11 @@ stack overflow 를 분석 및 구현
 
 ### 📌 QuestionAsk
 
-![업로드중..](blob:https://velog.io/2dec1d9a-f75e-4131-aa9e-102a2a7af93d)
+![image](https://user-images.githubusercontent.com/78696537/210203383-6a5a190e-9a24-4c76-a587-3eeeced5cb9b.png)
+
+![image](https://user-images.githubusercontent.com/78696537/210203411-314fbf20-5283-42eb-9fd7-787aae6d5fc5.png)
+
+![image](https://user-images.githubusercontent.com/78696537/210203447-7ad3caae-4cae-43d9-9fdd-08aae27a12f8.png)
 
 ### 📌 QuestionDetail
 
