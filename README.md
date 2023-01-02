@@ -53,16 +53,9 @@ stack overflow 를 분석 및 구현
 
 ---
 
-git
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=Git&logoColor=white">
-github
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=GitHub&logoColor=white">
-notion
-<img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
-google meet
-<img src="https://img.shields.io/badge/google meet-00897B?style=for-the-badge&logo=Google Meet&logoColor=white">
-discord
-<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=Notion&logoColor=white"> <img src="https://img.shields.io/badge/google meet-00897B?style=for-the-badge&logo=Google Meet&logoColor=white"> <img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white">
+
+
 ### 라이브러리 version
 
 ---
